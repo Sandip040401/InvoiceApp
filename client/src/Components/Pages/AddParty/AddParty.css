@@ -1,0 +1,73 @@
+.add-party-container {
+    height: 100vh;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 100px;
+}
+
+.add-party-form {
+    background: var(--body_background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 4px 6px var(--body_color);
+}
+
+.add-party-form label {
+    font-size: 25px;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.add-party-form input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 40px;
+    width: 95%;
+    padding: 0 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.add-party-form button {
+    height: 40px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-party-form button:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    position: fixed;
+    font-size: larger;
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%);
+    background-color: #11b13c;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 5px;
+    animation: slideIn 0.5s forwards;
+}
+
+.message.error {
+    background-color: #dc3545;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(100%, -50%);
+    }
+    100% {
+        transform: translate(0, -50%);
+    }
+}

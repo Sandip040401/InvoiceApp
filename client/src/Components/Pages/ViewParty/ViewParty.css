@@ -1,0 +1,76 @@
+/* ViewParty.css */
+
+/* Container */
+.view-party-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Headings */
+.view-party-container h2 {
+    margin-bottom: 10px;
+}
+
+/* Select Dropdown */
+.view-party-container select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+.select-container{
+    border: 1px var(--body_color) solid;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.input-year{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Table */
+.view-party-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.view-party-container th,
+.view-party-container td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.view-party-container th {
+    background-color: #f2f2f2;
+}
+
+/* View Bill Button */
+.view-bill-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-bill-button:hover {
+    background-color: #0056b3;
+}
+

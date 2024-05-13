@@ -1,0 +1,101 @@
+.add-bill-container {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.date-range {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.date-range label{
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.date-range input{
+  margin-left: 10px;
+  border-radius: 5px;
+  height: 20px;
+  width: 150px;
+  font-size: 16px;
+  padding: 1px;
+}
+
+.party-name-row {
+  border-bottom: 1px solid #ccc;
+  padding: 7.7px;
+  font-weight: bold;
+}
+
+.data-columns {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.label-column {
+  width: 108px;
+  border-right: 1px solid #ccc;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.party-label-column {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  padding-top: 3px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.data-row input {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-right: 1px solid #ccc;
+  width: 108px;
+  font-weight: 500;
+}
+
+.data-row input:last-child {
+  border-right: none;
+}
+
+.total-input {
+  padding: 8px;
+  font-size: 13px;
+  border: none;
+  width: 100px;
+  text-align: center;
+}
+
+.add-row-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.add-row-button button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

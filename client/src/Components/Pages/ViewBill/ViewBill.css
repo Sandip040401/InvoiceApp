@@ -1,0 +1,131 @@
+/* ViewBill.css */
+
+.view-bill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.view-bill-form {
+    margin-top: 30px;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--body_background);
+    width: 100%; /* Adjusted for responsiveness */
+    max-width: 500px; /* Added for better readability on larger screens */
+}
+
+.view-bill-form h2 {
+    margin-bottom: 20px; /* Added for spacing between heading and inputs */
+}
+
+.view-bill-form label {
+    margin-bottom: 5px; /* Added for spacing between labels and inputs */
+    margin-left: 10px;
+}
+
+.view-bill-form input[type="date"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    /* width: 100%;  */
+}
+
+.view-bill-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    /* width: 100%; */
+}
+
+.view-bill-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* ViewBill.css */
+
+.bills-container {
+    margin-top: 20px; /* Added for spacing */
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: var(--body_background);
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--body_background);
+}
+
+table tr:hover {
+    background-color: var(--body_background);
+}
+
+/* Optional: Adjust width of specific columns */
+table th:nth-child(1),
+table td:nth-child(1) {
+    min-width: 120px;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    min-width: 120px;
+}
+
+/* Optional: Hide overflow for specific columns */
+table th:nth-child(n+3),
+table td:nth-child(n+3) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+
+/* ViewBill.css */
+
+.download-csv-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.download-csv-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-csv-container button:hover {
+    background-color: #0056b3;
+}
+
