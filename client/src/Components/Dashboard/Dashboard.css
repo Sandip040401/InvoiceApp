@@ -1,0 +1,15 @@
+/* Dashboard.css */
+.dashboard {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .chart-container {
+    margin: 20px auto;
+    width: 60%;
+  }
+  
+  .chart-container h3 {
+    margin-bottom: 10px;
+  }
+  

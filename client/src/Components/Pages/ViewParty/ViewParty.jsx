@@ -222,11 +222,11 @@ function ViewParty() {
                 <>
                     {bills.length > 0 && (
                         <div className="bills-container">
-                            <h2>Bills for {selectedParty}</h2>
+                            <h2>Bills for {selectedParty}-{selectedYear}</h2>
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Date</th>
+                                        {/* <th>Date</th> */}
                                         <th>Party Name</th>
                                         <th>Payment</th>
                                         <th>PWT</th>
@@ -245,7 +245,7 @@ function ViewParty() {
                                 <tbody>
                                 {bills.map((bill, index) => (
                                     <tr key={index}>
-                                        <td>
+                                        {/* <td>
                                             {editedBill && editedBill.id === bill.id ? (
                                                 <input
                                                     type="text"
@@ -254,7 +254,7 @@ function ViewParty() {
                                                     onChange={handleEditInputChange}
                                                 />
                                             ) : bill.Date}
-                                        </td>
+                                        </td> */}
                                         <td>
                                             {editedBill && editedBill.id === bill.id ? (
                                                 <input
@@ -386,7 +386,7 @@ function ViewParty() {
                                     </tr>
                                 ))}
                                     <tr>
-                                        <td colSpan="2">Total Payment</td>
+                                        <td>Total Payment</td>
                                         <td>{totalPayment}</td>
                                         <td>{totalPWT}</td>
                                         <td>{totalCASH}</td>

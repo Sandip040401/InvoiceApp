@@ -1,0 +1,42 @@
+.table-container {
+    width: 50%;
+    border-collapse: collapse;
+    margin-left: 25%;
+    margin-right: 20%;
+    margin-top: 80px;
+}
+  
+.table-container th,
+.table-container td {
+    border: 1px solid var(--body_color);
+    padding: 8px;
+    text-align: left;
+}
+
+/* Adjust the width of the second column */
+.table-container td:nth-child(3) {
+    width: 20%; /* Adjust the width as per your preference */
+}
+
+.table-container td:nth-child(1){
+    width: 20%;
+}
+.table-container th {
+    background-color: var(--body_background);
+}
+
+/* Customize the delete button to be red */
+.table-container button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Hover effect for the delete button */
+.table-container button:hover {
+    background-color: darkred;
+}
+

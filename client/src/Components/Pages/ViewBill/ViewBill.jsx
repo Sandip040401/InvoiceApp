@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ExcelJS from 'exceljs';
+
 import './ViewBill.css';
 
 function ViewBill(){
@@ -81,45 +83,65 @@ function ViewBill(){
         }
     }
 
-    const handleDownloadCSV = () => {
-        const csvContent = convertToCSV(bills, startDate, endDate);
-        const blob = new Blob([csvContent], { type: 'text/csv' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'bills.csv';
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-    }
     
+    const handleDownloadExcel = () => {
+        const workbook = new ExcelJS.Workbook();
+        const worksheet = workbook.addWorksheet('Bills');
 
-    const convertToCSV = (data, startDate, endDate) => {
-        const headers = 'Serial No,P_Name,Payment,PWT,CASH,BANK,DUE,N_P,TCS,TDS,S_TDS,ATD,Total';
-        const rows = data.map((obj, index) => {
-            return `${index + 1},"${obj.partyName}",${obj.payment},${obj.PWT},${obj.CASH},${obj.BANK},${obj.DUE},${obj.N_P},${obj.TCS},${obj.TDS},${obj.S_TDS},${obj.ATD},${obj.total}`;
+        // Add headers
+        worksheet.addRow(['Serial No', 'P_Name', 'Payment', 'PWT', 'CASH', 'BANK', 'DUE', 'N_P', 'TCS', 'TDS', 'S_TDS', 'ATD', 'Total']);
+
+        // Add data rows
+        bills.forEach((bill, index) => {
+            worksheet.addRow([
+                index + 1,
+                bill.partyName,
+                bill.payment,
+                bill.PWT,
+                bill.CASH,
+                bill.BANK,
+                bill.DUE,
+                bill.N_P,
+                bill.TCS,
+                bill.TDS,
+                bill.S_TDS,
+                bill.ATD,
+                bill.total
+            ]);
         });
-    
-        // Calculate total
-        let totalRow = 'Total,';
-        const totalColumns = Object.keys(data[0]).length - 1; // Excluding the first column (date) for the total row
-        for (let i = 3; i < totalColumns; i++) {
-            if (i === 3) {
-                totalRow += ','; // Leave blank for dates and party names
-            } else {
-                const columnTotal = data.reduce((acc, curr) => acc + curr[Object.keys(curr)[i]], 0);
-                totalRow += `${columnTotal},`;
-            }
-        }
-        totalRow += data.reduce((acc, curr) => acc + curr.total, 0);
-    
-        const dateRow = `Date:,${startDate} to ${endDate}`;
-    
-        return `${headers}\n${rows.join('\n')}\n${totalRow}\n${dateRow}`;
+
+        // Add total row
+        worksheet.addRow([
+            'Total',
+            '',
+            totalPayment,
+            totalPWT,
+            totalCASH,
+            totalBANK,
+            totalDUE,
+            totalN_P,
+            totalTCS,
+            totalTDS,
+            totalS_TDS,
+            totalATD,
+            totalAllTotals
+        ]);
+
+        // Add date range row
+        worksheet.addRow(['Date:', `${startDate} to ${endDate}`]);
+
+        // Write to file
+        workbook.xlsx.writeBuffer().then(buffer => {
+            const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'bills.xlsx';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        });
     }
-    
-    
-    
+
     
     
 
@@ -149,7 +171,7 @@ function ViewBill(){
             </div>
             {bills.length > 0 && (
                 <div className="download-csv-container">
-                    <button onClick={handleDownloadCSV}>Download CSV</button>
+                    <button onClick={handleDownloadExcel}>Download EXCEL</button>
                 </div>
             )}
             {showDateRange && (

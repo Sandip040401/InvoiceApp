@@ -10,16 +10,16 @@ function Navbar(){
             <div className="navbar-container">
                 <div className="navbar-left">
                     <div className="navbar-heading">
-                        <h2 style={{
+                        <Link to='/' style={{textDecoration:"none"}}><h2 style={{
                             marginTop:'15px'
-                        }}>Tonushree Agency</h2>
+                        }}>Tonushree Agency</h2></Link>
                     </div>
                     <div className="navbar-search-client margin">
                         <div className="dropdown">
-                            <button className="dropbtn button-85">View/Print</button>
+                            <button className="dropbtn button-85">View Bill</button>
                             <div className="dropdown-content">
-                                <Link to="/view-party" className="below-border">View Party</Link>
-                                <Link to="/view-bill">View Bill</Link>
+                                <Link to="/view-party" className="below-border">Party Wise</Link>
+                                <Link to="/view-bill">Weekly Bill</Link>
                             </div>
                         </div>
                     </div>
@@ -29,6 +29,14 @@ function Navbar(){
                             <div className="dropdown-content">
                                 <Link to="/add-party" className="below-border">Add Party</Link>
                                 <Link to="/add-weekly-bill">Add Weekly Bill</Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="navbar-manage-client margin" style={{marginLeft:"50px"}}>
+                        <div className="dropdown">
+                            <button className="dropbtn button-85">Manage</button>
+                            <div className="dropdown-content">
+                                <Link to="/manage-party">Manage Party</Link>
                             </div>
                         </div>
                     </div>

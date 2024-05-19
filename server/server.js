@@ -251,7 +251,25 @@ app.post('/api/bills', async (req, res) => {
     }
 });
 
-  
+app.delete('/api/party/:partyName', async (req, res) => {
+    try {
+        const { partyName } = req.params;
+
+        // Check if party collection exists
+        const collectionExists = await mongoose.connection.db.listCollections({ name: partyName }).hasNext();
+        if (!collectionExists) {
+            return res.status(404).json({ error: 'Party not found' });
+        }
+
+        // Drop the collection
+        await mongoose.connection.db.collection(partyName).drop();
+
+        res.json({ message: 'Party deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting party:', error);
+        res.status(500).json({ error: 'Server error' });
+    }
+}); 
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
